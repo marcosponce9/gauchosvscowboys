@@ -200,71 +200,41 @@ footer {
 }
 /* Adaptación para pantallas de celulares */
 @media (max-width: 768px) {
-  
-  /* Ajustar imágenes y contenedores principales */
-  img, iframe, video {
-    max-width: 100%;
-    height: auto;
-  }
-
-  body {
-    padding: 10px;
-    font-size: 16px; /* Tamaño de texto cómodo para leer en móvil */
-  }
-
-  /* Si tienes columnas/flexbox, apílalas verticalmente */
-  .container, .row, .grid {
+  /* Arreglo del Header */
+  header, nav {
     flex-direction: column !important;
-    width: 100% !important;
-  }
-
-  /* Ajustar títulos grandes para que no corten la pantalla */
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-/* Adaptación para pantallas de celulares (pantallas de menos de 768px) */
-@media (max-width: 768px) {
-
-  /* 1. Arreglo para el Header */
-  header, nav, .header, .navbar {
-    flex-direction: column !important; /* Apila el logo y el menú verticalmente */
     height: auto !important;
+    max-height: none !important;
     padding: 15px 10px !important;
-    text-align: center;
+    gap: 15px !important;
   }
 
-  /* Si tienes un menú con listas/links */
-  nav ul, .menu {
+  /* Ajuste de enlaces del menú */
+  header nav, header div, header ul {
     flex-direction: column !important;
+    width: 100% !important;
+    align-items: center !important;
     gap: 10px !important;
-    padding: 0 !important;
-    margin-top: 10px !important;
   }
 
-  /* 2. Arreglo para la Portada / Hero Section */
-  .hero, .portada, .banner, section:first-of-type {
+  /* Arreglo del botón Kickstarter */
+  header a, header button {
+    width: auto !important;
+    white-space: normal !important;
+  }
+
+  /* Arreglo de la imagen de portada */
+  .hero, .portada, section:first-of-type {
     height: auto !important;
-    min-height: 60vh !important; /* Ajusta la altura para que no se corte */
-    background-size: cover !important; /* Asegura que la imagen de fondo cubra bien */
-    background-position: center center !important; /* Centra la imagen */
-    padding: 40px 20px !important;
+    min-height: 400px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
   }
 
-  /* Si la portada usa una imagen con tag <img> */
-  .hero img, .portada img, img.portada {
+  .hero img, .portada img, main img {
     width: 100% !important;
     height: auto !important;
-    object-fit: cover !important;
-  }
-
-  /* Ajustar textos grandes en móvil */
-  h1 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
+    object-fit: contain !important;
   }
 }
