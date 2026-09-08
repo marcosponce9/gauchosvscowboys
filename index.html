@@ -33,16 +33,19 @@
     <h2>Contact Us</h2>
     <p>Have questions, press inquiries, or feedback? Get in touch with us:</p>
     
-    <!-- Formulario configurado con Web3Forms -->
+    <!-- Formulario configurado con Web3Forms Gratis + Copia de Confirmación -->
     <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <!-- Tu clave de acceso de Web3Forms -->
         <input type="hidden" name="access_key" value="fba172a0-64aa-47d4-8cbf-aafd0b8f0b40">
 
         <!-- Asunto del correo que te llega a ti -->
-        <input type="hidden" name="subject" value="Nuevo contacto desde Gauchos vs Cowboys">
+        <input type="hidden" name="subject" value="Nuevo mensaje desde Gauchos vs Cowboys">
 
-        <!-- Nombre con el que le llegará la respuesta al usuario -->
+        <!-- Nombre del remitente que vera el usuario -->
         <input type="hidden" name="from_name" value="Gauchos vs Cowboys Team">
+
+        <!-- Envia una copia exacta del mensaje al correo del usuario como confirmacion -->
+        <input type="hidden" name="replyto" value="%email%">
 
         <!-- Campos del formulario -->
         <input type="text" name="name" placeholder="Your Name" required>
