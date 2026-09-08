@@ -28,32 +28,34 @@
         <a href="https://www.kickstarter.com/projects/lomalort/gauchosvscowboys" target="_blank" class="cta-button">Support us on Kickstarter</a>
     </div>
 
-    <!-- About Us Section -->
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p>We are an independent video game studio with a passion for creating original worlds, memorable characters, and stories that bring people together.</p>
-        <p>While video games are at the heart of what we do, our creativity doesn't stop there. We also develop animated films and other forms of entertainment, combining our experience in game development with our love for storytelling and cinema.</p>
-        <p>Gauchos vs Cowboys is our first animated film project, bringing together two iconic cultures in an action-packed story inspired by the history, landscapes, and spirit of the American and Argentine frontiers.</p>
-        <p>We believe great stories can live beyond a single medium — from games to films, and everything in between.</p>
-    </section>
+<!-- Contact Us Section -->
+<section id="contact" class="section dark">
+    <h2>Contact Us</h2>
+    <p>Have questions, press inquiries, or feedback? Get in touch with us:</p>
+    
+    <!-- Formulario configurado con Web3Forms -->
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Tu clave de acceso de Web3Forms -->
+        <input type="hidden" name="access_key" value="fba172a0-64aa-47d4-8cbf-aafd0b8f0b40">
 
-   <!-- Contact Us Section -->
-    <section id="contact" class="section dark">
-        <h2>Contact Us</h2>
-        <p>Have questions, press inquiries, or feedback? Get in touch with us:</p>
-        
-        <!-- Formulario configurado con FormSubmit -->
-        <form class="contact-form" action="https://formspree.io/f/xzebkgyy" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email Address" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <!-- Asunto del correo que te llega a ti -->
+        <input type="hidden" name="subject" value="Nuevo contacto desde Gauchos vs Cowboys">
 
-    <footer>
-        <p>© 2026 GAUCHOS VS COWBOYS. All rights reserved.</p>
-    </footer>
+        <!-- Nombre con el que le llegará la respuesta al usuario -->
+        <input type="hidden" name="from_name" value="Gauchos vs Cowboys Team">
+
+        <!-- Campos del formulario -->
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 GAUCHOS VS COWBOYS. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
