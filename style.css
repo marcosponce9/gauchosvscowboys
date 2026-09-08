@@ -20,12 +20,11 @@ body {
     background-color: rgba(15, 15, 17, 0.95);
     padding: 20px 50px;
     display: flex;
-    justify-content: space-between; /* El logo va a la izquierda y el menú a la derecha */
+    justify-content: space-between;
     align-items: center;
     z-index: 1000;
 }
 
-/* Estilo para el título en la esquina izquierda (Texto plano, no botón) */
 .logo {
     font-size: 1.4rem;
     font-weight: 800;
@@ -54,7 +53,7 @@ body {
     color: #ffffff;
 }
 
-/* Botón especial para Kickstarter */
+/* Botón Kickstarter en Navbar */
 .btn-kickstarter {
     background-color: #05ce78;
     color: #000000 !important;
@@ -70,7 +69,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Imagen Grande (Hero) - Nítida y limpia */
+/* Imagen Grande (Hero) */
 .hero {
     height: 100vh;
     background: url('portada.jpg') no-repeat center center/cover;
@@ -93,30 +92,38 @@ body {
     color: #ddd;
 }
 
+/* Contenedor y Botón estilo Barra */
+.hero-cta-container {
+    width: 100%;
+    padding: 0;
+    margin-top: 12px;
+    background-color: #0f0f11;
+}
+
 .cta-button {
     background-color: #05ce78;
     color: #000000;
-    padding: 18px 45px; /* Aumentamos el relleno para hacerlo más robusto */
+    width: 100%;
+    padding: 22px 20px;
     text-decoration: none;
-    font-weight: 800; /* Letra más gruesa y prominente */
-    font-size: 1.4rem; /* Letra más grande (antes era 1.1rem) */
-    border-radius: 40px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase; /* En mayúsculas resalta mejor */
-    box-shadow: 0 4px 15px rgba(5, 206, 120, 0.3); /* Sombra suave verdosa */
-    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-    display: inline-block;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: background-color 0.2s;
+    display: block;
+    box-sizing: border-box;
 }
 
 .cta-button:hover {
     background-color: #04b368;
-    transform: scale(1.08); /* Crece ligeramente cuando pasas el cursor */
-    box-shadow: 0 6px 20px rgba(5, 206, 120, 0.5);
 }
 
-/* Secciones Generales - Más juntas y más arriba */
+/* Secciones Generales */
 .section {
-    padding: 35px 20px; /* Reducimos el relleno interno (antes era 80px) */
+    padding: 35px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -168,40 +175,10 @@ footer {
     color: #666;
     font-size: 0.9rem;
 }
-/* Contenedor del botón estilo barra completa */
-.hero-cta-container {
-    width: 100%;
-    padding: 0;
-    margin-top: 12px; /* Crea la separación de ~3mm con la imagen */
-    background-color: #0f0f11;
-}
 
-/* Botón como barra de izquierda a derecha */
-.cta-button {
-    background-color: #05ce78;
-    color: #000000;
-    width: 100%; /* Ocupa el 100% del ancho de la pantalla */
-    padding: 22px 20px; /* Alto y cómodo de presionar */
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.5rem;
-    text-align: center;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border-radius: 0; /* Bordes rectos para que encaje perfectamente como barra */
-    transition: background-color 0.2s, transform 0.1s;
-    display: block;
-    box-sizing: border-box;
-}
-
-.cta-button:hover {
-    background-color: #04b368;
-    transform: none; /* Mantiene la barra fija */
-}
-/* Adaptación quirúrgica para celulares */
+/* Adaptación para Celulares */
 @media (max-width: 768px) {
   
-  /* 1. Header ultra limpio: Solo el logo centrado */
   .navbar {
     padding: 15px !important;
     justify-content: center !important;
@@ -212,26 +189,25 @@ footer {
     text-align: center !important;
   }
 
-  /* Oculta completamente el menú (About Us, Contact Us, Kickstarter) del header */
+  /* Oculta menú en móviles */
   .navbar ul {
     display: none !important;
   }
 
-  /* 2. Arreglo de la Portada / Hero */
+  /* Arreglo de Portada para no deformarse */
   .hero {
-    height: 45vh !important; /* Reduce la altura para que no ocupe toda la pantalla vertical */
-    min-height: 250px !important;
-    background-size: contain !important; /* Muestra la imagen entera sin recortarla */
-    background-position: center bottom !important;
-    margin-top: 50px !important;
+    height: auto !important;
+    min-height: 280px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    margin-top: 55px !important;
   }
 
-  /* 3. Ajuste de textos de secciones */
   .section h2 {
     font-size: 1.8rem !important;
   }
 
-  /* 4. Botón verde CTA ajustado para pulgares */
   .cta-button {
     font-size: 1.1rem !important;
     padding: 16px 10px !important;
