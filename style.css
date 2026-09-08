@@ -227,3 +227,44 @@ footer {
     font-size: 1.5rem;
   }
 }
+/* Adaptación para pantallas de celulares (pantallas de menos de 768px) */
+@media (max-width: 768px) {
+
+  /* 1. Arreglo para el Header */
+  header, nav, .header, .navbar {
+    flex-direction: column !important; /* Apila el logo y el menú verticalmente */
+    height: auto !important;
+    padding: 15px 10px !important;
+    text-align: center;
+  }
+
+  /* Si tienes un menú con listas/links */
+  nav ul, .menu {
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  /* 2. Arreglo para la Portada / Hero Section */
+  .hero, .portada, .banner, section:first-of-type {
+    height: auto !important;
+    min-height: 60vh !important; /* Ajusta la altura para que no se corte */
+    background-size: cover !important; /* Asegura que la imagen de fondo cubra bien */
+    background-position: center center !important; /* Centra la imagen */
+    padding: 40px 20px !important;
+  }
+
+  /* Si la portada usa una imagen con tag <img> */
+  .hero img, .portada img, img.portada {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Ajustar textos grandes en móvil */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+}
