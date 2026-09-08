@@ -198,43 +198,42 @@ footer {
     background-color: #04b368;
     transform: none; /* Mantiene la barra fija */
 }
-/* Adaptación para pantallas de celulares */
+/* Adaptación quirúrgica para celulares */
 @media (max-width: 768px) {
-  /* Arreglo del Header */
-  header, nav {
-    flex-direction: column !important;
-    height: auto !important;
-    max-height: none !important;
-    padding: 15px 10px !important;
-    gap: 15px !important;
+  
+  /* 1. Header ultra limpio: Solo el logo centrado */
+  .navbar {
+    padding: 15px !important;
+    justify-content: center !important;
   }
 
-  /* Ajuste de enlaces del menú */
-  header nav, header div, header ul {
-    flex-direction: column !important;
-    width: 100% !important;
-    align-items: center !important;
-    gap: 10px !important;
+  .logo {
+    font-size: 1.1rem !important;
+    text-align: center !important;
   }
 
-  /* Arreglo del botón Kickstarter */
-  header a, header button {
-    width: auto !important;
-    white-space: normal !important;
+  /* Oculta completamente el menú (About Us, Contact Us, Kickstarter) del header */
+  .navbar ul {
+    display: none !important;
   }
 
-  /* Arreglo de la imagen de portada */
-  .hero, .portada, section:first-of-type {
-    height: auto !important;
-    min-height: 400px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center top !important;
+  /* 2. Arreglo de la Portada / Hero */
+  .hero {
+    height: 45vh !important; /* Reduce la altura para que no ocupe toda la pantalla vertical */
+    min-height: 250px !important;
+    background-size: contain !important; /* Muestra la imagen entera sin recortarla */
+    background-position: center bottom !important;
+    margin-top: 50px !important;
   }
 
-  .hero img, .portada img, main img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
+  /* 3. Ajuste de textos de secciones */
+  .section h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* 4. Botón verde CTA ajustado para pulgares */
+  .cta-button {
+    font-size: 1.1rem !important;
+    padding: 16px 10px !important;
   }
 }
