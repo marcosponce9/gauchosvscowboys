@@ -213,3 +213,19 @@ footer {
     padding: 16px 10px !important;
   }
 }
+/* 1. Corrección para la imagen principal (Hero) */
+.hero {
+    width: 100%;
+    height: 70vh; /* Ajusta la altura al 70% de la pantalla */
+    background-image: url('tu-imagen.jpg'); /* Reemplaza por la ruta de tu imagen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; /* Usa 'contain' si quieres ver la imagen completa sin recortes, 
+                                 o 'cover' si prefieres que llene todo el ancho */
+}
+
+/* 2. Corrección para que la barra fija no tape el título "About Us" */
+.section {
+    scroll-margin-top: 90px; /* Crea una separación superior invisible al hacer clic en el menú */
+    padding: 60px 20px;
+}
