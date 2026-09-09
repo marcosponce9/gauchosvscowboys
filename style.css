@@ -25,12 +25,19 @@ body {
     z-index: 1000;
 }
 
-.logo {
+/* Estilo para el logo clickeable */
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
     font-size: 1.4rem;
     font-weight: 800;
-    color: #ffffff;
     letter-spacing: 2px;
     text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #05ce78; /* Cambia a verde al pasar el cursor */
 }
 
 .navbar ul {
@@ -69,27 +76,16 @@ body {
     transform: scale(1.05);
 }
 
-/* Imagen Grande (Hero) */
+/* Imagen Grande (Hero) - Adaptación proporcional exacta */
 .hero {
-    height: 100vh;
-    background: url('portada.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-}
-
-.hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    color: #ddd;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.7%; /* Mantiene la proporción exacta 1024x683 para que entre el 100% de la imagen */
+    background-image: url('portada.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Toca los bordes de la izquierda y derecha */
+    margin-top: 65px; /* Evita que la barra superior tape la cabeza de los personajes */
 }
 
 /* Contenedor y Botón estilo Barra */
@@ -121,12 +117,13 @@ body {
     background-color: #04b368;
 }
 
-/* Secciones Generales */
+/* Secciones Generales y separación de scroll */
 .section {
-    padding: 35px 20px;
+    padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    scroll-margin-top: 90px; /* Evita que el menú tapé los títulos */
 }
 
 .section h2 {
@@ -178,54 +175,32 @@ footer {
 
 /* Adaptación para Celulares */
 @media (max-width: 768px) {
-  
-  .navbar {
-    padding: 15px !important;
-    justify-content: center !important;
-  }
+    .navbar {
+        padding: 15px !important;
+        justify-content: center !important;
+    }
 
-  .logo {
-    font-size: 1.1rem !important;
-    text-align: center !important;
-  }
+    .logo {
+        font-size: 1.1rem !important;
+        text-align: center !important;
+    }
 
-  /* Oculta menú en móviles */
-  .navbar ul {
-    display: none !important;
-  }
+    .navbar ul {
+        display: none !important;
+    }
 
-  /* Arreglo de Portada para no deformarse */
-  .hero {
-    height: auto !important;
-    min-height: 280px !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center center !important;
-    margin-top: 55px !important;
-  }
+    .hero {
+        margin-top: 60px !important;
+        aspect-ratio: 1024 / 683 !important;
+        max-height: none !important;
+    }
 
-  .section h2 {
-    font-size: 1.8rem !important;
-  }
+    .section h2 {
+        font-size: 1.8rem !important;
+    }
 
-  .cta-button {
-    font-size: 1.1rem !important;
-    padding: 16px 10px !important;
-  }
-}
-/* 1. Corrección para la imagen principal (Hero) */
-.hero {
-    width: 100%;
-    height: 70vh; /* Ajusta la altura al 70% de la pantalla */
-    background-image: url('tu-imagen.jpg'); /* Reemplaza por la ruta de tu imagen */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain; /* Usa 'contain' si quieres ver la imagen completa sin recortes, 
-                                 o 'cover' si prefieres que llene todo el ancho */
-}
-
-/* 2. Corrección para que la barra fija no tape el título "About Us" */
-.section {
-    scroll-margin-top: 90px; /* Crea una separación superior invisible al hacer clic en el menú */
-    padding: 60px 20px;
+    .cta-button {
+        font-size: 1.1rem !important;
+        padding: 16px 10px !important;
+    }
 }
